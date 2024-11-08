@@ -1,4 +1,10 @@
 def mostrar_menu():
+    """
+    Muestra el menú principal de opciones para gestionar la agenda de contactos.
+
+    Esta función imprime en pantalla las opciones disponibles:
+    agregar, eliminar, buscar, listar contactos y salir del programa.
+    """
     print("\nAgenda de contacto")
     print("1. Agregar nuevo contacto")
     print("2. Eliminar contacto existente")
@@ -8,6 +14,14 @@ def mostrar_menu():
 
 
 def agregar_contacto(agenda):
+    """
+    Agrega un nuevo contacto a la agenda con su nombre, teléfono y email.
+
+    Args:
+        agenda (dict): Diccionario que almacena los contactos. Cada contacto se guarda
+                       con el nombre completo como clave, y un diccionario con 'teléfono'
+                       y 'email' como valores.
+    """
     nombre = (
         input("Por favor introduzca el nombre completo del contacto: ").strip().title()
     )
@@ -19,6 +33,13 @@ def agregar_contacto(agenda):
 
 
 def eliminar_contacto(agenda):
+    """
+    Elimina un contacto existente de la agenda.
+
+    Args:
+        agenda (dict): Diccionario que almacena los contactos.
+                       Se busca el contacto por su nombre completo.
+    """
     nombre = (
         input("Por favor introduzca el nombre completo del contacto: ").strip().title()
     )
@@ -31,6 +52,13 @@ def eliminar_contacto(agenda):
 
 
 def buscar_contacto(agenda):
+    """
+    Busca un contacto en la agenda por su nombre completo y muestra su información si existe.
+
+    Args:
+        agenda (dict): Diccionario que almacena los contactos.
+                       La búsqueda se realiza por el nombre completo.
+    """
     nombre = (
         input("Por favor introduzca el nombre completo del contacto: ").strip().title()
     )
@@ -45,6 +73,13 @@ def buscar_contacto(agenda):
 
 
 def listar_contactos(agenda):
+    """
+    Muestra una lista de todos los contactos en la agenda.
+
+    Args:
+        agenda (dict): Diccionario que almacena los contactos.
+                       Cada contacto incluye el nombre, teléfono y email.
+    """
     print("Lista de contactos:")
     for i, (contacto, info) in enumerate(agenda.items(), start=1):
         print(
@@ -53,6 +88,12 @@ def listar_contactos(agenda):
 
 
 def agenda_contactos():
+    """
+    Ejecuta la aplicación de la agenda de contactos, permitiendo interactuar con el menú principal.
+
+    Esta función inicializa la agenda con algunos contactos predefinidos y permite al usuario
+    elegir opciones del menú para agregar, eliminar, buscar y listar contactos.
+    """
     agenda = {
         "Aldrich Torres": {"teléfono": "123-456-7890", "email": "aldrich@example.com"},
         "Margi Pérez": {"teléfono": "098-765-4321", "email": "margi@example.com"},
